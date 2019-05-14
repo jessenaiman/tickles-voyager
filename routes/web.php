@@ -21,6 +21,10 @@ Route::get('post/{slug}', function ($slug) {
     return view('post', compact('post'));
 });
 
+Route::get('/music', function () {
+    return view('music');
+});
+
 Route::get('/demo', function () {
     return view('demo');
 });
