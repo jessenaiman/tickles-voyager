@@ -10,7 +10,6 @@
     @include('layout.partials.nav')
 
     <main role="main">
-        @include('layout.partials.header')
         @yield('content')
     </main>
 

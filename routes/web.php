@@ -22,6 +22,11 @@ Route::get('post/{slug}', function ($slug) {
 });
 
 Route::get('/music', function () {
+    $pages = App\Page::all();
+    return view('music', compact('pages'));
+});
+
+Route::get('/videos', function () {
     return view('music');
 });
 
@@ -33,3 +38,14 @@ Route::get('/demo', function () {
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+/*
+|--------------------------------------------------------------------------
+| Page Routes
+|--------------------------------------------------------------------------
+|
+| This is the route when a user visits a single page
+|
+*/
+
+Route::get('page/{slug}', 'PageController@read');
