@@ -59,111 +59,75 @@
 </head>
 
 <body>
-    <!-- BEGIN HEADER -->
+
     <header>
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <a class="navbar-brand" href="#">Tickles and Tunes</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary"><a class="navbar-brand" href="/"><i
+                    class="fas fa-music"></i> Tickles and Tunes<i class="fas fa-music"></i></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"><span
+                    class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink"
+                            href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">Music</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"><a class="dropdown-item"
+                                href="/music"><i class="fas fa-guitar"></i> Music</a>
+                            <div class="dropdown-divider"></div><a class="dropdown-item" href="/music/kidsmonthly">Kids
+                                Music Monthly</a><a class="dropdown-item" href="/music/counting">Counting Songs</a><a
+                                class="dropdown-item" href="/music/circle">Circle Time</a><a class="dropdown-item"
+                                href="/music/earlyyears">Early Childhood Music</a><a class="dropdown-item"
+                                href="/music/kidsmusic">Kids Music</a><a class="dropdown-item"
+                                href="/music/bedtime">Songs
+                                for Bed</a>
+                        </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/music">Music</a>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink"
+                            href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">Videos</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"><a class="dropdown-item"
+                                href="/videos">Videos</a>
+                            <div class="dropdown-divider"></div><a class="dropdown-item"
+                                href="/videos/fingerplays">Fingerplays</a><a class="dropdown-item"
+                                href="/videos/mrbear">Mr
+                                Bear</a><a class="dropdown-item" href="/videos/tap">Tap and Clap</a><a
+                                class="dropdown-item" href="/videos/strings">Things with Strings</a><a
+                                class="dropdown-item" href="/videos/sing">Watch and Sing</a>
+                        </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/videos">Videos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/artshow">Art Show</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/marketing">Marketing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/support">Support</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/about">About</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+                </ul>
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/signup">Create Account</a></li>
                 </ul>
             </div>
         </nav>
     </header>
-    <!-- END HEADER -->
-    <main role="main">
+    <section class="content">
+        @yield('content')
+    </section>
 
-        <section class="content">
-            @yield('content')
-        </section>
 
-        <!-- BEGIN FOOTER -->
-        <footer class="footer">
-            <div class="container">
-                <div class="row">
-                    <p><a href="#"><?= setting('title') ?></a> - Copyright <?= date("Y"); ?></p>
-                    <ul class="socialBot social">
-                        <li><a href="http://facebook.com/<?= setting('facebook') ?>" class="socialIcon facebook"
-                                target="_blank"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="http://plus.google.com/<?= setting('googleplus') ?>" class="socialIcon"
-                                target="_blank"><i class="fa fa-google-plus"></i></a></li>
-                        <li><a href="http://twitter.com/<?= setting('twitter') ?>" class="socialIcon" target="_blank"><i
-                                    class="fa fa-twitter"></i></a></li>
-                        <li><a href="/rss" class="socialIcon"><i class="fa fa-rss"></i></a></li>
-                    </ul>
-                    <div class="footer_menu">
-                        <?= menu('footer_menu') ?>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    </main>
-    <div id="modalpage">
-        <div class="modal search_popup" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-            style="padding:0;">
-            <div class="container">
-                <div class="search-modal modal-dialog col-sm-6 col-xs-6" style="float:none;">
-                    <div class="modal-content container">
-
-                        <div class="col-sm-8 col-md-offset-2 col-xs-8 col-xs-offset-2 slide">
-                            <button type="button" class="close animated rollIn" data-dismiss="modal"
-                                aria-label="Close"><span aria-hidden="true">×</span></button>
-                            <h1 class="animated fadeInDown">Search with Name</h1>
-                            <form method="GET" action="/search" accept-charset="UTF-8"
-                                class="form-horizontal formsettings" enctype="multipart/form-data">
-                                <input id="search" class="form-control animated fadeIn"
-                                    placeholder="Enter name to search" name="search" type="text">
-                                <input id="submit" class="btn btn-danger submit-media" type="submit" value="Search">
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Tickles and Tunes 2019</p>
         </div>
-    </div>
-    <!-- END FOOTER -->
+        <!-- /.container -->
+    </footer>
 
-
-    <script src="js/app.js"></script>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <!-- Google Analytics -->
-
-    <?php if(isset($settings->gganalytic) && trim($settings->gganalytic) != ""): ?>
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-	    ga('create', '<?= $settings->gganalytic ?>', 'auto');
-	    ga('send', 'pageview');
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
-    <?php endif; ?>
-
-    <!-- End Google Analytics -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
 
 </body>
 
