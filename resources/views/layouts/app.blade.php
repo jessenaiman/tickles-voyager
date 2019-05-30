@@ -55,7 +55,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/app.css">
-
+    @yield('head-scripts')
 </head>
 
 <body>
@@ -68,32 +68,9 @@
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink"
-                            href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">Music</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"><a class="dropdown-item"
-                                href="/music"><i class="fas fa-guitar"></i> Music</a>
-                            <div class="dropdown-divider"></div><a class="dropdown-item" href="/music/kidsmonthly">Kids
-                                Music Monthly</a><a class="dropdown-item" href="/music/counting">Counting Songs</a><a
-                                class="dropdown-item" href="/music/circle">Circle Time</a><a class="dropdown-item"
-                                href="/music/earlyyears">Early Childhood Music</a><a class="dropdown-item"
-                                href="/music/kidsmusic">Kids Music</a><a class="dropdown-item"
-                                href="/music/bedtime">Songs
-                                for Bed</a>
-                        </div>
+                    <li class="nav-item"><a class="nav-link" href="/music"><i class="fas fa-guitar"></i> Music</a>
                     </li>
-                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink"
-                            href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">Videos</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"><a class="dropdown-item"
-                                href="/videos">Videos</a>
-                            <div class="dropdown-divider"></div><a class="dropdown-item"
-                                href="/videos/fingerplays">Fingerplays</a><a class="dropdown-item"
-                                href="/videos/mrbear">Mr
-                                Bear</a><a class="dropdown-item" href="/videos/tap">Tap and Clap</a><a
-                                class="dropdown-item" href="/videos/strings">Things with Strings</a><a
-                                class="dropdown-item" href="/videos/sing">Watch and Sing</a>
-                        </div>
+                    <li class="nav-item dropdown"><a class="nav-link" href="/videos">Videos</a>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>

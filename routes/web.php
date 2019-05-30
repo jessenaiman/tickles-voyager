@@ -27,7 +27,11 @@ Route::get('/music', function () {
 });
 
 Route::get('/videos', function () {
-    return view('music');
+    return view('videos');
+});
+
+Route::get('/watch', function () {
+    return view('watch');
 });
 
 Route::get('/demo', function () {
